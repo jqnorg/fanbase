@@ -1,4 +1,6 @@
 import React from 'react';
+import CartWidget from './CartWidget';
+import '../styles/navbar.scss';
 
 function NavBar() {
     return(
@@ -13,6 +15,9 @@ function NavBar() {
                     <ul className="nav__item"><a href="#" className="nav__link">special</a></ul>
                 </ul>
             </nav>
+            <div className="header__cartwidget">
+                <CartWidget />
+            </div>
         </header>
     )
 }

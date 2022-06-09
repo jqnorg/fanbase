@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import App from './App';
+import './fonts/TTCommons/Fontspring-DEMO-tt_commons_pro_regular.otf'
+import './fonts/TTCommons/Fontspring-DEMO-tt_commons_pro_bold.otf'
 
 ReactDOM.render(
     <React.StrictMode>

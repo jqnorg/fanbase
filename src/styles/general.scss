@@ -1,0 +1,37 @@
+// General 
+
+$background-color: #070707;
+$contrast-color: #0AE5E5;
+
+@font-face {
+    font-family: "TTCommonsRegular";
+    src: url(../fonts/TTCommons/Fontspring-DEMO-tt_commons_pro_regular.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "TTCommonsBold";
+    src: url(../fonts/TTCommons/Fontspring-DEMO-tt_commons_pro_bold.otf);
+    font-weight: bold;
+}
+
+html {
+    font-size: 62.5%;
+}
+  
+body {
+    padding: 0; margin: 0;
+    min-height: 100vh; min-width: 100vw;
+    font-size: 1.6rem;
+    background-color: $background-color;
+    color: white;
+    font-family: "TTCommonsRegular";
+}
+
+section {
+    margin: 10% 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

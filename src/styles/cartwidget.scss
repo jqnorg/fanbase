@@ -1,0 +1,10 @@
+@import 'general.scss';
+
+.cart-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    color: rgba($contrast-color, 0.8);
+}
