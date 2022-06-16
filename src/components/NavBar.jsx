@@ -6,7 +6,7 @@ function NavBar() {
     return(
         <header className='header'>
             <div className='header__logo'>
-                <a className="header__logo-text"><span className="bold-logo">fan</span>base</a>
+                <a className="header__logo-text">únicos</a>
             </div>
             <nav className="nav">
                 <ul className="nav__menu">

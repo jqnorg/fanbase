@@ -1,0 +1,50 @@
+@import 'general.scss';
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 5rem;
+    height: 45rem;
+    flex-grow: 1;
+    text-align: center;
+    font-family: 'Montserrat';
+    
+    .item__image {
+        width: 25rem;
+    }
+    .item__title {
+        background: $contrast-color;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .item__description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20rem;
+    }
+    .item__button {
+        padding: 1rem;
+        background: 
+        linear-gradient(($background-color, $background-color)) padding-box,
+        linear-gradient(to right, hsla(58, 100%, 68%, 1), hsla(39, 74%, 52%, 1)) border-box;
+        border-radius: 15px;
+        border: 1px solid transparent;
+        color: $contrast-color;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+@media(max-width: 468px) {
+    .item{
+        width: 20rem;
+    }
+    .item-button{
+        width: 20rem;
+    }
+}

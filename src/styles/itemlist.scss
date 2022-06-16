@@ -1,0 +1,17 @@
+@import 'general.scss';
+
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+@media(max-width: 468px) {
+    .item-list {
+        margin-top: 20rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10rem;
+    }
+}

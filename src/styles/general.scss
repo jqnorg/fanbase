@@ -1,7 +1,8 @@
 // General 
 
-$background-color: #070707;
-$contrast-color: #0AE5E5;
+$background-color: #121212;
+$contrast-color: radial-gradient(circle, hsla(58, 100%, 68%, 1) 75%, hsla(39, 74%, 52%, 1) 100%);
+
 
 @font-face {
     font-family: "TTCommonsRegular";
@@ -29,9 +30,5 @@ body {
 }
 
 section {
-    margin: 10% 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 10rem;
 }
