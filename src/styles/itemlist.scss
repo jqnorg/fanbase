@@ -2,8 +2,9 @@
 
 .item-list {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 10rem;
 }
 
 @media(max-width: 468px) {

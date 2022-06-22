@@ -10,9 +10,9 @@ function NavBar() {
             </div>
             <nav className="nav">
                 <ul className="nav__menu">
+                    <ul className="nav__item"><a href="#" className="nav__link">special</a></ul>
                     <ul className="nav__item"><a href="#" className="nav__link">authentic</a></ul>
                     <ul className="nav__item"><a href="#" className="nav__link">retro</a></ul>
-                    <ul className="nav__item"><a href="#" className="nav__link">special</a></ul>
                 </ul>
             </nav>
             <div className="header__cartwidget">

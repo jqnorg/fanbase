@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 function App() {
@@ -10,7 +10,8 @@ function App() {
             <NavBar />
         </div>
         <div>
-            <ItemListContainer name="Alejo" />
+            {/* <ItemListContainer name="Alejo" /> */}
+            <ItemDetailContainer />
         </div>
         </>
     );
