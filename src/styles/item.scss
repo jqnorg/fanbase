@@ -7,16 +7,17 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: 'Montserrat';
-    cursor: pointer;
-    
+    font-family: 'Montserrat';  
+    text-decoration: none;
     
     .item__image {
         width: 25rem;
         margin-bottom: 1rem;
+        cursor: pointer;
     }
     .item__title {
         background: $contrast-color;
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -26,25 +27,36 @@
         align-items: center;
         width: 20rem;
     }
-    .item__button {
-        padding: 1rem;
-        background: 
-        linear-gradient(($background-color, $background-color)) padding-box,
-        linear-gradient(to right, hsla(58, 100%, 68%, 1), hsla(39, 74%, 52%, 1)) border-box;
-        border-radius: 15px;
-        border: 1px solid transparent;
-        color: $contrast-color;
-        color: white;
-        cursor: pointer;
-        margin-top: 1rem;
+    .item__interact {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        .item__button {
+            margin-top: 0;
+            padding: 1rem;
+            background: 
+            linear-gradient(($background-color, $background-color)) padding-box,
+            linear-gradient(to right, hsla(58, 100%, 68%, 1), hsla(39, 74%, 52%, 1)) border-box;
+            border-radius: 15px;
+            border: 1px solid transparent;
+            color: white;
+            cursor: pointer;
+        }
+        .item__button:hover {
+            border: 1px solid transparent;
+            background: linear-gradient(to right, hsla(58, 100%, 68%, 0.8), hsla(39, 74%, 52%, 0.8));
+            color: black;
+        }
     }
 }
 
-.item:hover {
-    .item__image {
-        transform: scale(1.1);
-    }
-}
+// .item:hover {
+//     .item__image {
+//         transform: scale(1.1);
+//     }
+// }
 
 @media(max-width: 468px) {
     .item{

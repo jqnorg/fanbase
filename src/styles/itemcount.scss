@@ -3,12 +3,16 @@
 .item-count-box {
     display: flex;
     justify-content: space-around;
-    width: 20rem;
-    padding: 0.5rem;
+    width: 10rem;
     border: 1px solid white;
     border-radius: 1.5rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
+    background: 
+    linear-gradient(($background-color, $background-color)) padding-box,
+    linear-gradient(to right, hsla(58, 100%, 68%, 1), hsla(39, 74%, 52%, 1)) border-box;
+    border-radius: 15px;
+    border: 1px solid transparent;
 }
 
 .count-button {
@@ -28,9 +32,4 @@
     border: none;
     color: white;
     background-color: transparent;    cursor: pointer;
-}
-
-.item-count-button-add:hover {
-    color: rgba($contrast-color, 80%);
-    transition: color 0.2s;
 }

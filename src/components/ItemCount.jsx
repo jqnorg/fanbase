@@ -25,7 +25,6 @@ function ItemCount({stock, initial, onAdd}) {
                 <div className="qty-display">{quantity}</div>
                 <span className="count-button" id="item-count-plus" onClick={handleAdd}>+</span>
             </div>
-            <button className="item-count-button-add" onClick={() => onAdd(quantity)}>Add to Cart</button>   
         </div>
     )
 }
