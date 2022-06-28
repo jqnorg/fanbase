@@ -1,5 +1,7 @@
 import {React, useState} from "react";
 import '../styles/itemcount.scss';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
 function ItemCount({stock, initial, onAdd}) {
     const [quantity, setQuantity ] = useState(0);
@@ -24,6 +26,9 @@ function ItemCount({stock, initial, onAdd}) {
                 <span className="count-button" id="item-count-minus" onClick={handleSubtract}>-</span>
                 <div className="qty-display">{quantity}</div>
                 <span className="count-button" id="item-count-plus" onClick={handleAdd}>+</span>
+            </div>
+            <div className="item-count__button">
+                <FontAwesomeIcon icon={faShoppingCart} className="item__button" onClick={onAdd}/>
             </div>
         </div>
     )
