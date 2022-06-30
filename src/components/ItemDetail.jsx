@@ -2,12 +2,18 @@ import React from "react";
 import "../styles/itemdetail.scss";
 import ItemCount from "./ItemCount"
 import {Link} from "react-router-dom";
+import {useState, useContext} from "react";
+import cartContext from "../context/CartContext";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faXmark} from '@fortawesome/free-solid-svg-icons';
 
 function ItemDetail({item}) {
     const [isAddedToCart, setAddedToCart] = React.useState(false);
-    function handleOnAdd() {
+    const {addToCart, cart, isInCartContext} = useContext(cartContext);
+
+    function handleOnAdd(quantity) {
+        addToCart(item,quantity);
         setAddedToCart(true);
-        console.log('hp;a');
     }
 
     return (
@@ -24,10 +30,11 @@ function ItemDetail({item}) {
                     ?  <Link className="item__cartlink" to="/cart">Ir al carrito</Link>
                     :  <ItemCount stock={item.stock} initial={1} onAdd={handleOnAdd} />
                 }
+
+                {isInCartContext(item.id) && <FontAwesomeIcon icon={faXmark} className="item__button" id="button-remove"/>}
             </div>
         </div>
-    )
-
+    );
 }
 
 export default ItemDetail;

@@ -1,0 +1,43 @@
+@import 'general.scss';
+
+.cart-wrapper {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .cart-items {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    } 
+    .cart-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        & > .cart-item__image {
+            display: flex;
+            width: 15rem;
+        }
+    }
+    .cart-interact {
+        margin-top: 5rem;
+    }
+    .cart-button {
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 2.5rem;
+        padding: 1rem;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    #removeFromClass {
+        position: relative;
+        top: 0;
+        cursor: pointer;
+    }
+}

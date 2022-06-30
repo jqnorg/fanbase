@@ -30,6 +30,12 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         cursor: pointer;
+        &#button-remove {
+            margin-left: 3rem;
+            background: $contrast-color;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
     .item__cartlink {
         padding: 1rem;

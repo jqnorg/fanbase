@@ -6,6 +6,7 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 function ItemCount({stock, initial, onAdd}) {
     const [quantity, setQuantity ] = useState(0);
 
+
     function handleAdd() {
         if (quantity < stock) {
             setQuantity(quantity + 1);
@@ -20,6 +21,10 @@ function ItemCount({stock, initial, onAdd}) {
         }
     }
 
+    function addToCart() {
+        onAdd(quantity);
+    }
+
     return(
         <div className="item-count">
             <div className="item-count-box">
@@ -28,7 +33,7 @@ function ItemCount({stock, initial, onAdd}) {
                 <span className="count-button" id="item-count-plus" onClick={handleAdd}>+</span>
             </div>
             <div className="item-count__button">
-                <FontAwesomeIcon icon={faShoppingCart} className="item__button" onClick={onAdd}/>
+                <FontAwesomeIcon icon={faShoppingCart} className="item__button" onClick={addToCart}/>
             </div>
         </div>
     )
