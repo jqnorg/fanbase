@@ -2,11 +2,20 @@
 
 .cart-widget {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     cursor: pointer;
-    background: $contrast-color;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    color: white;
+    .qty-display {
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border: 1px solid white;
+        width: 2rem; height: 2rem;
+    }
 }

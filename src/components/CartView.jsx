@@ -3,7 +3,7 @@ import cartContext from "../context/CartContext";
 import "../styles/cartview.scss"
 
 function CartView() {
-    const {cart} = useContext(cartContext);
+    const {cart, removeItemById, clearCart, totalCartPrice} = useContext(cartContext);
 
     return (
         <>
@@ -15,7 +15,7 @@ function CartView() {
                     <span className="cart-item__name">{item.title}</span>
                     <span className="cart-item__price">{item.price}</span>
                     <span className="cart-item__quantity">Quantity: {item.qnty}</span>
-                    <p id="removeFromClass" onClick={clearCart}>x</p>
+                    <p id="removeFromClass" onClick={() => removeItemById(item.id)}>x</p>
                 </div>
             ))}
             </div>

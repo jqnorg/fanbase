@@ -1,25 +1,32 @@
 import React, {useState, useEffect} from "react";
 import ItemList from "./ItemList";
 import '../styles/itemlistcontainer.scss';
-import {products} from "../data/products"
+import { getProducts, getProductsByCategory } from "../services/firestore";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
-    const [productsList, setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
+    const {categoryId} = useParams();
 
     useEffect(() => {
-        const getProducts = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve(productsList);
-          }, 600);
-        });
-
-        getProducts.then((resolve) => {
+      if (categoryId) {
+        getProductsByCategory(categoryId)
+          .then((resolve) => {
             setProducts(resolve);
           })
           .catch((error) => {
             console.log(error);
           });
-      }, []);
+        } else {
+          getProducts()
+          .then((resolve) => {
+            setProducts(resolve);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        }
+      }, [categoryId]);
 
     return (
          <section className="item-list-container">

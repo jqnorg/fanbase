@@ -9,7 +9,7 @@ import {faXmark} from '@fortawesome/free-solid-svg-icons';
 
 function ItemDetail({item}) {
     const [isAddedToCart, setAddedToCart] = React.useState(false);
-    const {addToCart, cart, isInCartContext} = useContext(cartContext);
+    const {addToCart, cart, isInCart} = useContext(cartContext);
 
     function handleOnAdd(quantity) {
         addToCart(item,quantity);
@@ -31,7 +31,7 @@ function ItemDetail({item}) {
                     :  <ItemCount stock={item.stock} initial={1} onAdd={handleOnAdd} />
                 }
 
-                {isInCartContext(item.id) && <FontAwesomeIcon icon={faXmark} className="item__button" id="button-remove"/>}
+                {isInCart(item.id) && <FontAwesomeIcon icon={faXmark} className="item__button" id="button-remove"/>}
             </div>
         </div>
     );

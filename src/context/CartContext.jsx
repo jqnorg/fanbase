@@ -7,11 +7,11 @@ export function CartContextProvider(props){
 
     const [cart, setCart] = useState([]);
 
-    const isInCart = (id) => {
+    function isInCart(id) {
         return cart.some((item) => item.id === id);
     };
 
-    const addToCart = (item, quantity) => {
+    function addToCart(item, quantity) {
         if (isInCart(item.id)) {
             alert('This item is already in cart.');
         } else {
@@ -19,18 +19,32 @@ export function CartContextProvider(props){
         }
     };
 
-    function isInCartContext(id) {
-        return cart.some(item => item.id === id);
+    function removeItemById(id) {
+        let updateCart = cart.filter((item) => item.id !== id);
+        setCart(updateCart);
     }
 
-    const clearCart = () => {
+
+    function totalCartPrice() {
+        let cartTotal = 0;
+        cart.forEach((item) => (cartTotal = cartTotal + item.quantity * item.price))
+    }
+
+    function quantityInCart() {
+        let cartQuantity = 0;
+        cart.forEach((item) => (cartQuantity = cartQuantity + item.quantity));
+        return cartQuantity
+    }
+
+    function clearCart() {
         setCart([]);
     };
 
-
-    return <cartContext.Provider value={{cart, isInCartContext, addToCart, clearCart}}>
-        {props.children}
-    </cartContext.Provider>
+    return (
+        <cartContext.Provider value={{cart, isInCart, addToCart, clearCart, removeItemById, totalCartPrice}}>
+            {props.children}
+        </cartContext.Provider>
+    )
 }
 
 export default cartContext;

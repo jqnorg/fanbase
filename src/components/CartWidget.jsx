@@ -7,7 +7,7 @@ function CartWidget() {
     return(
         <div className="cart-widget">
             <FontAwesomeIcon icon={faShoppingCart}/>
-            <div className="qty-display"></div>
+            <div className="qty-display">1</div>
         </div>
     );
 }

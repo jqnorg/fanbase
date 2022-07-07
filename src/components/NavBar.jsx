@@ -23,7 +23,7 @@ function NavBar() {
                 </ul>
             </nav>
             <div className="header__cartwidget">
-                <CartWidget />
+                <Link to='/cart' className='nav_cartwidget'><CartWidget /></Link>
             </div>
         </header>
     )
