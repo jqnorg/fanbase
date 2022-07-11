@@ -1,5 +1,5 @@
 import React from "react";
-import {createContext, useEffect, useState} from "react"
+import {createContext, useState} from "react"
 
 const cartContext = createContext();
 
@@ -13,11 +13,20 @@ export function CartContextProvider(props){
 
     function addToCart(item, quantity) {
         if (isInCart(item.id)) {
-            alert('This item is already in cart.');
+          const idToAdd = item.id;
+          let itemToAdd = cart.find((eachItem) => eachItem.id === idToAdd);
+          itemToAdd.qnty += quantity;
+    
+          let newCart = cart.filter((eachItem) => eachItem.id !== item.id);
+          setCart([...newCart, { ...itemToAdd }]);
         } else {
-            setCart([...cart, { ...item, quantity }]);
+            if(quantity === 0){
+                alert("Select the quantity to add this item");
+            }else {
+                setCart([...cart, { ...item, qnty: quantity }]);
+            }
         }
-    };
+      }
 
     function removeItemById(id) {
         let updateCart = cart.filter((item) => item.id !== id);
@@ -26,22 +35,23 @@ export function CartContextProvider(props){
 
 
     function totalCartPrice() {
-        let cartTotal = 0;
-        cart.forEach((item) => (cartTotal = cartTotal + item.quantity * item.price))
+        let cartTotal = 0
+        cart.forEach((item) => (cartTotal = cartTotal + item.qnty * item.price));
+        return cartTotal;
     }
 
     function quantityInCart() {
         let cartQuantity = 0;
-        cart.forEach((item) => (cartQuantity = cartQuantity + item.quantity));
-        return cartQuantity
+        cart.forEach((item) => (cartQuantity = cartQuantity + item.qnty));
+        return cartQuantity;
     }
 
     function clearCart() {
         setCart([]);
-    };
+    }
 
     return (
-        <cartContext.Provider value={{cart, isInCart, addToCart, clearCart, removeItemById, totalCartPrice}}>
+        <cartContext.Provider value={{cart, isInCart, addToCart, clearCart, removeItemById, totalCartPrice, quantityInCart}}>
             {props.children}
         </cartContext.Provider>
     )

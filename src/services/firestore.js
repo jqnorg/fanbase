@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 
-import {getFirestore, query, getDocs,getDoc, doc, collection, where} from "firebase/firestore";
+import {getFirestore, query, getDocs,getDoc, doc, collection, where, addDoc, Timestamp} from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -63,5 +63,18 @@ export async function getProductById(itemId) {
         id: docSnapshot.id,
         ...docSnapshot.data(),
     };
+}
+
+export async function createBuyOrder(orderData) {
+  const orderCollectionRef = collection(appFirestore, "orders")
+  const dateTimestamp = Timestamp.now();
+
+  const dateToOrder = {
+    ...orderData, 
+    date: dateTimestamp,
+  };
+  const createOrder = await addDoc(orderCollectionRef, dateToOrder);
+  return createOrder;
+  
 }
 

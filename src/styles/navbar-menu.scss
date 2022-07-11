@@ -1,0 +1,60 @@
+@import 'general.scss';
+
+.navigation {
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    height: 100%;
+    color: black;
+    .navigation__close {
+        position: absolute;
+        right: 3rem;
+        cursor: pointer;
+        background-color: $background-color;
+        background: $contrast-color;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .navigation__wrapper {
+        width: 100%; height: 100%;
+        display: grid;
+        grid-template-rows: repeat(3,1fr);
+        .navigation__item {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $background-color;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+            .navigation__item:last-child{
+                border: none;
+            }
+            .item__text {
+                background-color: $background-color;
+                background: $contrast-color;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 992px) {
+    .navigation {
+        width: 30rem;
+        height: 50rem;
+        right: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        .navigation__wrapper{
+            .navigation__item {
+                background-color: #0d1017;
+            }
+        }
+    }
+}

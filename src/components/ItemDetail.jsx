@@ -2,18 +2,16 @@ import React from "react";
 import "../styles/itemdetail.scss";
 import ItemCount from "./ItemCount"
 import {Link} from "react-router-dom";
-import {useState, useContext} from "react";
+import {useContext} from "react";
 import cartContext from "../context/CartContext";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faXmark} from '@fortawesome/free-solid-svg-icons';
 
 function ItemDetail({item}) {
-    const [isAddedToCart, setAddedToCart] = React.useState(false);
-    const {addToCart, cart, isInCart} = useContext(cartContext);
+    const {addToCart, removeItemById, isInCart} = useContext(cartContext);
 
     function handleOnAdd(quantity) {
         addToCart(item,quantity);
-        setAddedToCart(true);
     }
 
     return (
@@ -26,12 +24,12 @@ function ItemDetail({item}) {
                 <p className="item__category">{item.category}</p>
                 <p className="item__description">{item.description}</p>
                 <div className="item__price">${item.price}</div>
-                {isAddedToCart 
+                {isInCart(item.id) 
                     ?  <Link className="item__cartlink" to="/cart">Ir al carrito</Link>
                     :  <ItemCount stock={item.stock} initial={1} onAdd={handleOnAdd} />
                 }
 
-                {isInCart(item.id) && <FontAwesomeIcon icon={faXmark} className="item__button" id="button-remove"/>}
+                {isInCart(item.id) && <FontAwesomeIcon icon={faXmark} className="item__button" id="button-remove" onClick={() => removeItemById(item.id)}/>}
             </div>
         </div>
     );
