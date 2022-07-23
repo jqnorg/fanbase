@@ -21,6 +21,8 @@ function App() {
                         <Route path='/product/:itemId' element={<ItemDetailContainer/>}/>
                         <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
                         <Route path='/cart' element={<CartViewContainer/>}/>
+                        {/* Github Pages Redirection  */}
+                        <Route path='/unicos' element={<ItemListContainer/>}/>
                         <Route path='*' element={<NotFoundPage/>}/>
                     </Routes>
                 </Router>
