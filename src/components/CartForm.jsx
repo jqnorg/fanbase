@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import '../styles/cartform.scss';
 import swal from 'sweetalert';
 import {useForm} from 'react-hook-form'
-import {MdHighlightOff} from "react-icons/md"
 
 function CartForm({cart, totalCartPrice, createBuyOrder, clearCart}) {
     const [client, setClient] = useState({
@@ -11,7 +10,7 @@ function CartForm({cart, totalCartPrice, createBuyOrder, clearCart}) {
         phone: "",
         address: "",
     },)
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
         console.log(data);

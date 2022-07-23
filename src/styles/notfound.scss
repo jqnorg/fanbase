@@ -1,0 +1,11 @@
+@import 'general.scss';
+
+.message {
+    text-align: center;
+    font-size: 5rem;
+    font-family: 'Baloo 2';
+    background: $contrast-color;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

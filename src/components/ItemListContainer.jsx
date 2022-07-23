@@ -4,6 +4,7 @@ import '../styles/itemlistcontainer.scss';
 import { getProducts, getProductsByCategory } from "../services/firestore";
 import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
+import NotFoundPage from "../pages/NotFound";
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
@@ -55,11 +56,15 @@ const ItemListContainer = () => {
       )
     }
 
-    return (
-         <section className="item-list-container">
-             <ItemList items={products} />
-         </section>
-    );
+    if(products) {
+      return (
+           <section className="item-list-container">
+               <ItemList items={products} />
+           </section>
+      );
+    }else {
+      <NotFoundPage/>
+    }
 };
 
 export default ItemListContainer;
