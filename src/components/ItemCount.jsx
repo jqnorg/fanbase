@@ -2,6 +2,7 @@ import {React, useState} from "react";
 import '../styles/itemcount.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import swal from "sweetalert";
 
 function ItemCount({stock, initial, onAdd}) {
     const [quantity, setQuantity ] = useState(initial);
@@ -11,18 +12,19 @@ function ItemCount({stock, initial, onAdd}) {
         if (quantity < stock) {
             setQuantity(quantity + 1);
         }else {
-            alert("Sorry, we don't have that many in stock.");
+            swal("Sorry, we don't have that many in stock", "error");
         }
     }
 
     function handleSubtract() {
-        if (quantity > 0) {
+        if (quantity > 1) {
             setQuantity(quantity - 1);
         }
     }
 
     function addToCart() {
         onAdd(quantity);
+        swal("Added to cart", "Your item was added to cart.", "success");
     }
 
     return(

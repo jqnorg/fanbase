@@ -38,12 +38,39 @@
             justify-content: center;
             align-items: center;
             grid-area: remove;
-            color: rgba(255, 0, 0, 0.5);
+            background: $contrast-color;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             cursor: pointer;
         }
     }
+    .no-cart-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        text-align: center;
+    }
     .cart-interact {
         margin-top: 5rem;
+    }
+    .cart-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .cart-info__dform {
+        width: 15rem;
+        color: white;
+        padding: 1rem;
+        background: 
+        linear-gradient(($background-color, $background-color)) padding-box,
+        linear-gradient(90deg, hsla(211, 96%, 62%, 1) 0%, hsla(295, 94%, 76%, 1) 100%) border-box;
+        border-radius: 15px;
+        border: 1px solid transparent;
+        cursor: pointer;
+
     }
     .cart-button {
         margin-top: 1rem;
@@ -57,5 +84,6 @@
         position: relative;
         top: 0;
         cursor: pointer;
+        
     }
 }

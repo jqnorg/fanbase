@@ -3,10 +3,12 @@ import ItemList from "./ItemList";
 import '../styles/itemlistcontainer.scss';
 import { getProducts, getProductsByCategory } from "../services/firestore";
 import { useParams } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
     const {categoryId} = useParams();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
       if (categoryId) {
@@ -16,6 +18,9 @@ const ItemListContainer = () => {
           })
           .catch((error) => {
             console.log(error);
+          })
+          .finally(() => {
+            setLoading(false);
           });
         } else {
           getProducts()
@@ -24,9 +29,31 @@ const ItemListContainer = () => {
           })
           .catch((error) => {
             console.log(error);
-          });
+          })
+          .finally(() => {
+            setLoading(false);
+          })
         }
       }, [categoryId]);
+
+    if(loading) {
+      return (
+        <section className="item-list-container">
+          <ClipLoader
+            color="hsla(211, 96%, 62%, 1)"
+            cssOverride={{
+              'position': 'fixed',
+              'top': '50%',
+              'left': "50%",
+              'transform': 'translate(-50%, -50%)'
+            }}
+            loading
+            size={100}
+            speedMultiplier={0.6}
+          />
+        </section>
+      )
+    }
 
     return (
          <section className="item-list-container">

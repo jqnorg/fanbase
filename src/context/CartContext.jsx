@@ -42,7 +42,7 @@ export function CartContextProvider(props){
 
     function quantityInCart() {
         let cartQuantity = 0;
-        cart.forEach((item) => (cartQuantity = cartQuantity + item.qnty));
+        cartQuantity = cart.length;
         return cartQuantity;
     }
 

@@ -7,11 +7,10 @@ import { useContext } from 'react';
 
 function CartWidget() {
     const {quantityInCart} = useContext(cartContext);
-
     return(
         <div className="cart-widget" style={{textDecoration: 'none'}}>
             <FontAwesomeIcon icon={faShoppingCart}/>
-            {quantityInCart > 0 && <div className="qty-display">{quantityInCart()}</div>}
+            {quantityInCart() > 0 && <div className="qty-display">{quantityInCart()}</div> }
         </div>
     );
 }

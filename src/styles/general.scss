@@ -1,7 +1,7 @@
 // General 
 
 $background-color: #0d1017;
-$contrast-color: radial-gradient(circle, hsla(58, 100%, 68%, 1) 75%, hsla(39, 74%, 52%, 1) 100%);
+$contrast-color: linear-gradient(90deg, hsla(211, 96%, 62%, 1) 0%, hsla(295, 94%, 76%, 1) 100%);
 
 
 @font-face {
@@ -17,7 +17,9 @@ $contrast-color: radial-gradient(circle, hsla(58, 100%, 68%, 1) 75%, hsla(39, 74
 }
 
 html {
+    height: 100%;
     font-size: 62.5%;
+    overflow-x:hidden !important;
 }
   
 body {
@@ -27,8 +29,14 @@ body {
     background-color: $background-color;
     color: white;
     font-family: "Montserrat";
+    display: flex;
+    flex-direction: column;
 }
 
 section {
     margin-top: 10rem;
+}
+
+.app-container {
+    margin-bottom: 10rem;
 }

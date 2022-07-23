@@ -10,12 +10,15 @@
     text-decoration: none;
     color: white;
     .qty-display {
+        position: relative;
+        left: -2rem; top: -1rem;
+        background: $contrast-color;
+        border-radius: 100%;
         font-size: 1.2rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 100%;
-        border: 1px solid white;
-        width: 2rem; height: 2rem;
+        width: 1.5rem; height: 1.5rem;
+        color: black;
     }
 }

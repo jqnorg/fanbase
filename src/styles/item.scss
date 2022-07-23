@@ -2,6 +2,7 @@
 
 
 .item {
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,6 +29,14 @@
         width: 20rem;
         height: 12rem;
     }
+    .item__price {
+        font-size: 1.5rem;
+        font-weight: light;
+        background: $contrast-color;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     .item__interact {
         margin-top: 2rem;
         display: flex;
@@ -52,12 +61,6 @@
         }
     }
 }
-
-// .item:hover {
-//     .item__image {
-//         transform: scale(1.1);
-//     }
-// }
 
 @media(max-width: 468px) {
     .item{

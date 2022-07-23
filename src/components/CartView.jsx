@@ -1,11 +1,21 @@
 import { useContext } from "react";
 import cartContext from "../context/CartContext";
-import { createBuyOrder } from "../services/firestore";
 import CartForm from "./CartForm";
 import "../styles/cartview.scss"
+import { useState } from "react";
+import { createBuyOrder } from "../services/firestore";
 
 function CartView() {
     const {cart, totalCartPrice, removeItemById, clearCart} = useContext(cartContext);
+    const [formStatus, setFormStatus] = useState(false);
+
+    function toggleFormStatus() {
+        if (formStatus === false) {
+            setFormStatus(true);
+        }else {
+            setFormStatus(false);
+        }
+    }
 
     return (
         <>
@@ -20,7 +30,6 @@ function CartView() {
                     <img src={item.image} className="cart-item__image" alt=""/>
                     <div className="cart-item__info">
                         <span className="cart-item__name">{item.title}</span>
-                        <span className="cart-item__price">${item.price}</span>
                     </div>
                     <span className="cart-item__info">{item.qnty}</span>
                     <span className="cart-item__info">${item.price * item.qnty}</span>
@@ -31,11 +40,12 @@ function CartView() {
             <div className="cart-interact">
                 <div className="cart-info">
                     <span className="cart-info__item">Total a pagar: ${totalCartPrice()}</span>
+                    <button className="cart-info__dform" onClick={() => toggleFormStatus()}>Continue to checkout</button>
                 </div>
-                <button className="cart-button">Complete Order</button>
             </div>
+
+            {formStatus && <CartForm cart={cart} totalCartPrice={totalCartPrice} clearCart={clearCart} createBuyOrder={createBuyOrder}/>}
         </div>
-        <CartForm cart={cart} totalCartPrice={totalCartPrice} clearCart={clearCart} createBuyOrder={createBuyOrder}></CartForm>
         
         </>
     )
