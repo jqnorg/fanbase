@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/unicos/static/css/main.44209c74.css",
-    "main.js": "/unicos/static/js/main.1d9f8053.js",
+    "main.js": "/unicos/static/js/main.55e885fa.js",
     "static/media/Fontspring-DEMO-tt_commons_pro_bold.otf": "/unicos/static/media/Fontspring-DEMO-tt_commons_pro_bold.341efba3988806874b31.otf",
     "static/media/Fontspring-DEMO-tt_commons_pro_regular.otf": "/unicos/static/media/Fontspring-DEMO-tt_commons_pro_regular.94aeb2f151d38e99784f.otf",
     "index.html": "/unicos/index.html",
     "main.44209c74.css.map": "/unicos/static/css/main.44209c74.css.map",
-    "main.1d9f8053.js.map": "/unicos/static/js/main.1d9f8053.js.map"
+    "main.55e885fa.js.map": "/unicos/static/js/main.55e885fa.js.map"
   },
   "entrypoints": [
     "static/css/main.44209c74.css",
-    "static/js/main.1d9f8053.js"
+    "static/js/main.55e885fa.js"
   ]
 }
